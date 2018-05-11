@@ -27,17 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let userNotificationCenter = UNUserNotificationCenter.current()
         userNotificationCenter.delegate = self
-        userNotificationCenter.requestAuthorization(options: [.badge, .alert]) { (grant, error) in
+        userNotificationCenter.requestAuthorization(options: [.badge, .alert, .sound]) { (grant, error) in
             if (grant) {
                 print("success")
             }
         }
         
         let action = UNNotificationAction(identifier: "action", title: "plum", options: .foreground)
-        let myCategory = UNNotificationCategory(identifier: "PLUM", actions: [action], intentIdentifiers: [], options: .customDismissAction)
+        let myCategory = UNNotificationCategory(identifier: "PLUM", actions: [action], intentIdentifiers: [], options: [])
         userNotificationCenter.setNotificationCategories([myCategory])
         
-        
+//        let url: URL?
+//        url?.startAccessingSecurityScopedResource()
         UIApplication.shared.registerForRemoteNotifications()
         
         return true
@@ -66,11 +67,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let tok = deviceToken.map{String(format: "%02.2hhx", $0)}.joined()
-        print(tok)
+        let token = deviceToken.map{String(format: "%02.2hhx", $0)}.joined()
+        print(token)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if let name = userInfo["name"] {
+            UserDefaults.standard.set(name, forKey: "name")
+        }
+        
         print()
     }
     
@@ -82,15 +87,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //MARK: - UNUserNotificationCenterDelegate
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print()
-        print(response.actionIdentifier)
+        completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        center.getDeliveredNotifications { (nts) in
-            print(nts)
-        }
-        completionHandler([.alert, .badge, .sound])
+//        center.getDeliveredNotifications { (nts) in
+//            print(nts)
+//        }
+        completionHandler([.alert, .badge])
     }
 }
 

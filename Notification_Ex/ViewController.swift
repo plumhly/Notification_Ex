@@ -10,37 +10,36 @@ import UIKit
 import UserNotifications
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let uncenter = UNUserNotificationCenter.current()
-        uncenter.getNotificationSettings { (settings) in
-            let a = settings.soundSetting.rawValue
-            let b = settings.alertSetting.rawValue
-            print()
+        
+        if let namme = UserDefaults.standard.value(forKey: "name") {
+            label.text = namme as? String
         }
         
-        
-//        let request = localNotification_Now()
-//        uncenter.add(request) { (error) in
-//            if let e = error {
-//                print(e)
-//            }
-//        }
+        let uncenter = UNUserNotificationCenter.current()
+        createLocalNotification()
         
     }
     
-    func localNotification_Now() -> UNNotificationRequest {
+    func createLocalNotification() {
         let content = UNMutableNotificationContent()
         content.body = "hello"
         content.title = "plum"
         content.categoryIdentifier = "PLUM"
+        content.launchImageName = "Screenshot01@2x"
         content.sound = UNNotificationSound.default()
         
         let triger = UNTimeIntervalNotificationTrigger(timeInterval: 4, repeats: false)
+        let request = UNNotificationRequest(identifier: "PLUM", content: content, trigger: triger)
         
-        return UNNotificationRequest(identifier: "PLUM", content: content, trigger: triger)
+        let uncenter = UNUserNotificationCenter.current()
+        uncenter.add(request) { (error) in
+            print(error)
+        }
     }
     
     func localNotification_Pre() {
@@ -63,7 +62,33 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+ 
+    @IBAction func addNo(_ sender: UIButton) {
+        let center = UNUserNotificationCenter.current()
+        center.getDeliveredNotifications { (notifications) in
+            notifications.forEach({ (noti) in
+                print(noti.request.content.title)
+                let title = noti.request.content.title
+            })
+        }
+        
+    }
+    
+    @IBAction func removeNo(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func update(_ sender: UIButton) {
+        let content = UNMutableNotificationContent()
+        content.body = "hello_update"
+        content.sound = UNNotificationSound.default()
+        
+        let triger = UNTimeIntervalNotificationTrigger(timeInterval: 4, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "PLUM", content: content, trigger: triger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
 }
 

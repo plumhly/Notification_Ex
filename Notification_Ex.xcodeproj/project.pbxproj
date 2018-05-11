@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38194E4120A57983002A5B36 /* noti@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38194E4020A57982002A5B36 /* noti@2x.png */; };
 		384433392094133700ABF39E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384433382094133700ABF39E /* AppDelegate.swift */; };
 		3844333B2094133700ABF39E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3844333A2094133700ABF39E /* ViewController.swift */; };
 		3844333E2094133700ABF39E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3844333C2094133700ABF39E /* Main.storyboard */; };
 		384433402094133800ABF39E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3844333F2094133800ABF39E /* Assets.xcassets */; };
 		384433432094133800ABF39E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384433412094133800ABF39E /* LaunchScreen.storyboard */; };
+		389CD14820A024D000AB2756 /* attach_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 389CD14420A0223000AB2756 /* attach_image.png */; };
 		389F6F18209AE6F7006B5443 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F6F17209AE6F7006B5443 /* NotificationService.swift */; };
 		389F6F1C209AE6F7006B5443 /* noti_extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 389F6F15209AE6F6006B5443 /* noti_extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		389F6F29209AF49F006B5443 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F6F28209AF49F006B5443 /* UserNotifications.framework */; };
@@ -22,6 +24,7 @@
 		389F6F47209BFCD6006B5443 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F6F49209BFCD6006B5443 /* Localizable.strings */; };
 		389F6F54209C03CA006B5443 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F6F49209BFCD6006B5443 /* Localizable.strings */; };
 		389F6F55209C03CB006B5443 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F6F49209BFCD6006B5443 /* Localizable.strings */; };
+		38D4F31220A57DAF00FA0A68 /* Screenshot01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D4F31120A57DAF00FA0A68 /* Screenshot01@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38194E4020A57982002A5B36 /* noti@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noti@2x.png"; sourceTree = "<group>"; };
 		384433352094133700ABF39E /* Notification_Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notification_Ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384433382094133700ABF39E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3844333A2094133700ABF39E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		3844333F2094133800ABF39E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		384433422094133800ABF39E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		384433442094133800ABF39E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		389CD14420A0223000AB2756 /* attach_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attach_image.png; sourceTree = "<group>"; };
 		389F6F0F209AAE48006B5443 /* Notification_Ex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notification_Ex.entitlements; sourceTree = "<group>"; };
 		389F6F15209AE6F6006B5443 /* noti_extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = noti_extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		389F6F17209AE6F7006B5443 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		389F6F56209C0408006B5443 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		389F6F57209C0415006B5443 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		389F6F58209C2C0E006B5443 /* content_extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = content_extension.entitlements; sourceTree = "<group>"; };
+		38D4F31120A57DAF00FA0A68 /* Screenshot01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot01@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,9 @@
 		384433372094133700ABF39E /* Notification_Ex */ = {
 			isa = PBXGroup;
 			children = (
+				38D4F31120A57DAF00FA0A68 /* Screenshot01@2x.png */,
+				38194E4020A57982002A5B36 /* noti@2x.png */,
+				389CD14420A0223000AB2756 /* attach_image.png */,
 				389F6F0F209AAE48006B5443 /* Notification_Ex.entitlements */,
 				384433382094133700ABF39E /* AppDelegate.swift */,
 				3844333A2094133700ABF39E /* ViewController.swift */,
@@ -251,7 +260,7 @@
 						CreatedOnToolsVersion = 9.3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -304,7 +313,9 @@
 			files = (
 				384433432094133800ABF39E /* LaunchScreen.storyboard in Resources */,
 				389F6F54209C03CA006B5443 /* Localizable.strings in Resources */,
+				38D4F31220A57DAF00FA0A68 /* Screenshot01@2x.png in Resources */,
 				384433402094133800ABF39E /* Assets.xcassets in Resources */,
+				38194E4120A57983002A5B36 /* noti@2x.png in Resources */,
 				3844333E2094133700ABF39E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				389CD14820A024D000AB2756 /* attach_image.png in Resources */,
 				389F6F55209C03CB006B5443 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

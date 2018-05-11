@@ -7,6 +7,7 @@
 //
 
 import UserNotifications
+import UserNotificationsUI
 
 class NotificationService: UNNotificationServiceExtension {
 
@@ -21,6 +22,15 @@ class NotificationService: UNNotificationServiceExtension {
             // Modify the notification content here...
             bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
             bestAttemptContent.subtitle = "在extension中新添加的subtitle"
+           
+            let url = Bundle.main.url(forResource: "attach_image", withExtension: "png")!
+            
+            do {
+                let atta = try UNNotificationAttachment(identifier: "picture", url: url, options: nil)
+                bestAttemptContent.attachments = [atta]
+            } catch let error {
+                print(error)
+            }
             contentHandler(bestAttemptContent)
         }
     }
