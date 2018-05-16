@@ -30,15 +30,17 @@ class ViewController: UIViewController {
         content.body = "hello"
         content.title = "plum"
         content.categoryIdentifier = "PLUM"
-        content.launchImageName = "Screenshot01@2x"
+        content.launchImageName = "screenshot01@2x.png"
         content.sound = UNNotificationSound.default()
         
         let triger = UNTimeIntervalNotificationTrigger(timeInterval: 4, repeats: false)
         let request = UNNotificationRequest(identifier: "PLUM", content: content, trigger: triger)
         
-        let uncenter = UNUserNotificationCenter.current()
-        uncenter.add(request) { (error) in
-            print(error)
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error) in
+            if let er = error {
+                print(er)
+            }
         }
     }
     

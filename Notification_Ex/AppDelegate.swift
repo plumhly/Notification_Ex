@@ -33,8 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
         
-        let action = UNNotificationAction(identifier: "action", title: "plum", options: .foreground)
-        let myCategory = UNNotificationCategory(identifier: "PLUM", actions: [action], intentIdentifiers: [], options: [])
+        let action1 = UNNotificationAction(identifier: "action1", title: "plum1", options: .foreground)
+        let action2 = UNNotificationAction(identifier: "action2", title: "plum2", options: .foreground)
+        let action3 = UNNotificationAction(identifier: "action3", title: "plum3", options: .foreground)
+        let action4 = UNNotificationAction(identifier: "action4", title: "plum4", options: .foreground)
+        let myCategory = UNNotificationCategory(identifier: "PLUM", actions: [action1, action2, action3, action4], intentIdentifiers: ["identifier"], options: [])
         userNotificationCenter.setNotificationCategories([myCategory])
         
 //        let url: URL?
@@ -68,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.map{String(format: "%02.2hhx", $0)}.joined()
-        print(token)
+        debugPrint(token)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -77,6 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         print()
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {

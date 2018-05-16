@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>content_extension</string>
+	<string>content_extest</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -25,13 +25,11 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>UNNotificationExtensionCategory</key>
-			<array>
-				<string>PLUM</string>
-			</array>
+			<string>libo</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<integer>1</integer>
-			<key>UNNotificationExtensionDefaultContentHidden</key>
-			<true/>
+			<real>1</real>
+			<key>UNNot</key>
+			<string></string>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>

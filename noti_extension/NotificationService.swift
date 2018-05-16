@@ -17,18 +17,16 @@ class NotificationService: UNNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
-        
         if let bestAttemptContent = bestAttemptContent {
             // Modify the notification content here...
             bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
-            bestAttemptContent.subtitle = "在extension中新添加的subtitle"
            
             let url = Bundle.main.url(forResource: "attach_image", withExtension: "png")!
             
             do {
                 let atta = try UNNotificationAttachment(identifier: "picture", url: url, options: nil)
                 bestAttemptContent.attachments = [atta]
-            } catch let error {
+            } catch let error as NSError {
                 print(error)
             }
             contentHandler(bestAttemptContent)
@@ -36,8 +34,6 @@ class NotificationService: UNNotificationServiceExtension {
     }
     
     override func serviceExtensionTimeWillExpire() {
-        // Called just before the extension will be terminated by the system.
-        // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
         if let contentHandler = contentHandler, let bestAttemptContent =  bestAttemptContent {
             contentHandler(bestAttemptContent)
         }

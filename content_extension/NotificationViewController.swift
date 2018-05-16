@@ -23,7 +23,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         let button = UIButton(type: UIButtonType.custom)
         button.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
         button.backgroundColor = UIColor.blue
-        button.addTarget(self, action: #selector(clcik), for: .touchUpInside)
+        button.addTarget(self, action: #selector(click), for: .touchUpInside)
         view.addSubview(button)
         return view
     }()
@@ -68,10 +68,17 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     
-    @objc func clcik() {
+    @objc func click() {
         print("click")
-         self.label?.text = "hi goodperson"
+        self.label?.text = "hi goodperson"
         self.resignFirstResponder()
     }
+    
+    @IBAction func myclick(_ sender: Any) {
+        self.label?.text = "hi goodperson"
+        self.resignFirstResponder()
+    }
+    
+    
     
 }
